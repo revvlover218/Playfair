@@ -6,14 +6,14 @@ using namespace std;
 
 int main()
 {
-	string key;
+	string key = "encryption";
 	string keydup;
 	int length;
 
 	string alpha = "abcdefghijklmnopqrstuvwxyz";
 
 	cout << "Enter a keyword:" << endl;
-	cin >> key;
+	//cin >> key;
 
 	key.append(alpha);
 	length = key.length();
@@ -23,12 +23,14 @@ int main()
 
 	for (int i = 0; i < key.length(); i++)
 	{
-		for (int j = 0; j < key.length(); j++)
+		for (int j = i+1; j < key.length(); j++)
 		{
 			if (key[i] == key[j])
 			{
-				if (j + 1 < 26)
-				key[j] == key[j + 1];
+				//if (j + 1 < 26)
+				//key[i] == key[j + 1];
+				//cout << "\n" << key[i] << endl;
+				key[j] = ' ';
 
 			}
 
@@ -37,7 +39,7 @@ int main()
 	}
 
 	cout << "\n\n" << "After removing duplicates:" << endl;
-	cout << "\n\n" << keydup << endl;
+	cout << "\n\n" << key << endl;
 
 
 	system("pause");
