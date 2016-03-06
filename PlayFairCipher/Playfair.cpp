@@ -86,8 +86,23 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 
 }*/
 
-void PlayfairCipher::inputInfo()
-{
+void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, text message and a boolean variable for
+{										//encryption/ decryption
 
+	string keyword;
+	string message;
+	bool dec_enc;
+	PlayfairCipher PFC;
+
+	cout << "\nEnter keyword to be used:" << endl;
+	cin >> keyword;
+	PFC.setKey(keyword);
+
+	cout << "\nEnter message to be encrypted/ decrypted:" << endl;
+	cin >> message;
+	PFC.setMessage(message);
+
+	cout << "\nEnter '0' for encryption or '1' for decryption:" << endl;
+	cin >> dec_enc;
+	PFC.setMethod(dec_enc);
 }
-
