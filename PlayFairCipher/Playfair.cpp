@@ -106,3 +106,11 @@ void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, t
 	cin >> dec_enc;
 	PFC.setMethod(dec_enc);
 }
+
+void PlayfairCipher::output()
+{
+	cout << "The encrypted message is:" << endl;
+	cout << key << endl;
+	cout << message << endl;
+	cout << d_e << endl;
+}

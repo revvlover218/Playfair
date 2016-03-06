@@ -6,6 +6,7 @@ using namespace std;
 
 class PlayfairCipher
 {
+
 private:
 	string key;		//variable to hold the keyword 
 	string message;	//message to be encrypted/ decrypted
@@ -13,7 +14,6 @@ private:
 					//whether the message is to be encrypted or decrypted, d_e is short for decryption and encryption
 
 public:
-
 	PlayfairCipher();	//Constructor
 	~PlayfairCipher();	//Destructor
 
@@ -22,13 +22,18 @@ public:
 	string getKeyWord();
 	string getMessage();
 	bool getMethod();
+
 	//Mutator
 	void setKey(string);
 	void setMessage(string);
 	void setMethod(bool);
 
 	//Input
-	void inputInfo();
+	void inputInfo();		//Method which is used to input the keyword, text message and a boolean variable for
+							//encryption/ decryption
+
+	//Output
+	void output();
 
 
 	//Encryption
