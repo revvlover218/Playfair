@@ -7,11 +7,10 @@ using namespace std;
 int main()
 {
 	PlayfairCipher PFC;
-	PFC.inputInfo();
-
-
-
 	
+	
+	PFC.inputInfo();
+	PFC.output();	
 
 	system("pause");
 	return 0;
