@@ -54,11 +54,10 @@ void PlayfairCipher::SortKeyword()
 {
 	
 	string alpha = "abcdefghijklmnopqrstuvwxyz";
-	string keyword;
+	char keyword[5][5];
 
 	key.append(alpha);	//the alphabets are appended to the keyword
-	//int length = key.length();
-
+	
 	for (int i = 0; i < key.length(); i++)
 	{
 
@@ -78,6 +77,31 @@ void PlayfairCipher::SortKeyword()
 
 	cout << "\n\n" << "After removing duplicates:" << endl;
 	cout << "\n\n" << key << endl;
+	
+	int i = 0;
+
+	for (int r = 0; r < 5; r++)
+	{
+	
+		for (int c = 0; c < 5; c++)
+		{
+
+			keyword[r][c] = key[i];
+			i++;
+		}
+	}
+
+	for (int r = 0; r < 5; r++)
+	{
+
+		for (int c = 0; c < 5; c++)
+		{
+
+			cout << keyword[r][c] << "\t";
+		}
+		cout << endl;
+	}
+
 
 }
 
