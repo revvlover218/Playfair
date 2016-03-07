@@ -52,25 +52,28 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 
 void PlayfairCipher::SortKeyword()
 {
-	int length;
+	
 	string alpha = "abcdefghijklmnopqrstuvwxyz";
+	string keyword;
 
-	key.append(alpha);
-	length = key.length();
-
-	cout << "\n\n" << key << endl;
-	cout << "\n" << length << endl;
+	key.append(alpha);	//the alphabets are appended to the keyword
+	//int length = key.length();
 
 	for (int i = 0; i < key.length(); i++)
 	{
-		if (key[i] == 'j')
-			key[i] = ' ';
+
 		for (int j = i + 1; j < key.length(); j++)
 		{
 			if (key[i] == key[j])
-				key[j] = ' ';
+				key.erase(j, 1); //Remove duplicate characters
 		}
 
+	}
+
+	for (int i = 0; i < key.length(); i++)
+	{
+		if (key[i] == 'j')		//Remove 'j' from keyword
+			key.erase(i, 1);
 	}
 
 	cout << "\n\n" << "After removing duplicates:" << endl;

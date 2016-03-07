@@ -33,11 +33,9 @@ public:
 							//encryption/ decryption
 
 	//Process
-	void SortKeyword(); //The is the keyword manipulation. The keyword is appended to the rest of the letters of the alphabet,
-						//thereafter, the duplicates are 'removed' by replacing them with spaces. The 'j' is then removed.
-						//Now since all places which had duplicates now contain a space, the [...] function is used to  
-						//concatenate the text into a string with no spaces. Next a 2D array is created and is populated with
-						//the string. 
+	void SortKeyword(); //This is the keyword manipulation. The keyword is appended to the rest of the letters of the alphabet,
+						//and the duplicates are 'removed' using the .erase function. Thereafter, the 'j' is removed.
+						//Next a 2D array is created and is populated with the key word. 
 
 	//Output
 	void output();
