@@ -32,8 +32,16 @@ public:
 	void inputInfo();		//Method which is used to input the keyword, text message and a boolean variable for
 							//encryption/ decryption
 
+	//Process
+	void SortKeyword(); //The is the keyword manipulation. The keyword is appended to the rest of the letters of the alphabet,
+						//thereafter, the duplicates are 'removed' by replacing them with spaces. The 'j' is then removed.
+						//Now since all places which had duplicates now contain a space, the [...] function is used to  
+						//concatenate the text into a string with no spaces. Next a 2D array is created and is populated with
+						//the string. 
+
 	//Output
 	void output();
+	void testoutput();
 
 
 	//Encryption

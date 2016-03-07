@@ -50,13 +50,10 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 
 
 
-/*void PlayfairCipher::createKeyword(string key)
+void PlayfairCipher::SortKeyword()
 {
 	int length;
 	string alpha = "abcdefghijklmnopqrstuvwxyz";
-
-	cout << "Enter a keyword:" << endl;
-	cin >> key;
 
 	key.append(alpha);
 	length = key.length();
@@ -66,17 +63,12 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 
 	for (int i = 0; i < key.length(); i++)
 	{
+		if (key[i] == 'j')
+			key[i] = ' ';
 		for (int j = i + 1; j < key.length(); j++)
 		{
 			if (key[i] == key[j])
-			{
-				//if (j + 1 < 26)
-				//key[i] == key[j + 1];
-				//cout << "\n" << key[i] << endl;
 				key[j] = ' ';
-
-			}
-
 		}
 
 	}
@@ -84,7 +76,7 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 	cout << "\n\n" << "After removing duplicates:" << endl;
 	cout << "\n\n" << key << endl;
 
-}*/
+}
 
 void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, text message and a boolean variable for
 {										//encryption/ decryption
@@ -117,4 +109,11 @@ void PlayfairCipher::output()
 	cout << getKeyWord() << endl;
 	cout << getMessage() << endl;
 	cout << getMethod() << endl;
+}
+
+void PlayfairCipher::testoutput()
+{
+
+
+
 }

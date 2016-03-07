@@ -10,8 +10,9 @@ int main()
 	
 	
 	PFC.inputInfo();
-	PFC.output();	
-
+//	PFC.output();	
+	PFC.SortKeyword();
+	
 	system("pause");
 	return 0;
 }
