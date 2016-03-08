@@ -46,10 +46,6 @@ void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryp
 	d_e = de;
 }
 
-
-
-
-
 void PlayfairCipher::SortKeyword()
 {
 	
@@ -138,9 +134,33 @@ void PlayfairCipher::output()
 	cout << getMethod() << endl;
 }
 
-void PlayfairCipher::testoutput()
+void PlayfairCipher::prepMessage()
 {
+	string mes;
 
+	if (d_e == 0) //Encryption
+	{
 
+		for (int i = 0; i < message.length(); i+=2)
+		{
 
+			mes += message[i];		//append each character to the string: mes
+		
+			if (i + 1 < message.length()) //if the length of the message has not been reached
+			{
+				if (message[i] == message[i + 1])		//Check if the next character is the same as the current character 
+				{										//if it is insert an "X" between them, since Playfair cipher does not
+					mes += "x";							//allow the character in each pair to be the same.
+				}
+				mes += message[i + 1];
+			}
+		}
+
+		if (mes.length() % 2 == 1)		//Since encryption requires the characters of the message to be in pairs, it means that the length 
+			mes.append("x");			//of the string must be even. Therefore, if there is an odd number of characters in the string
+										//insert an 'X' to make the length of the string even.
+		message = mes;
+
+		cout << "\n\n" << message << endl;
+	}
 }

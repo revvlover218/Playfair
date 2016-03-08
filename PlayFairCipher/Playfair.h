@@ -35,8 +35,9 @@ public:
 	//Process
 	void SortKeyword(); //This is the keyword manipulation. The keyword is appended to the rest of the letters of the alphabet,
 						//and the duplicates are 'removed' using the .erase function. Thereafter, the 'j' is removed.
-						//Next a 2D array is created and is populated with the key word. 
-
+						//Next a 2D array is created and is populated with the key word.
+	void prepMessage(); //Takes the message from input and separates repeating letters using the filler character "X"
+						//The same filler characgter is used if the pairs are incomplete.
 	//Output
 	void output();
 	void testoutput();

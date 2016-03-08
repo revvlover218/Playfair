@@ -8,11 +8,15 @@ int main()
 {
 	PlayfairCipher PFC;
 	
+	string mes;
 	
 	PFC.inputInfo();
 //	PFC.output();	
-	PFC.SortKeyword();
+//	PFC.SortKeyword();
+	PFC.prepMessage();
 	
+	
+
 	system("pause");
 	return 0;
 }
