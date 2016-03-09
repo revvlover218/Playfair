@@ -1,3 +1,8 @@
+//Name: Reshal Luchman
+//Student number: 213501051
+//ENEL4SE - Security and Encryption
+//Major practical 1
+
 #ifndef PLAYFAIR_H
 #define PLAYFAIR_H
 #include <string>

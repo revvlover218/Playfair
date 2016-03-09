@@ -1,3 +1,8 @@
+//Name: Reshal Luchman
+//Student number: 213501051
+//ENEL4SE - Security and Encryption
+//Major practical 1
+
 #include <iostream>
 #include <string>
 #include "Playfair.h"
@@ -13,7 +18,7 @@ int main()
 	PFC.inputInfo();
 //	PFC.output();	
 //	PFC.SortKeyword();
-	PFC.prepMessage();
+//	PFC.prepMessage();
 	
 	
 

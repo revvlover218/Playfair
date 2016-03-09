@@ -1,3 +1,8 @@
+//Name: Reshal Luchman
+//Student number: 213501051
+//ENEL4SE - Security and Encryption
+//Major practical 1
+
 #include "Playfair.h"
 #include <iostream>
 #include <string>
@@ -179,6 +184,13 @@ void PlayfairCipher::encry_decry()
 {
 	int row1 = 0, col1 = 0, row2 = 0, col2 = 0;
 	int h = 0;
+
+	int direction; //variable to hold value for the direction of encryption i.e. encryption = 1 and decryption = -1
+
+	if (d_e = 0)
+		direction = 1;
+	if (d_e = 1)
+		direction = -1;
 
 	while (h < message.length())
 	{
