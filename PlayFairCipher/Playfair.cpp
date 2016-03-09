@@ -61,6 +61,38 @@ void PlayfairCipher::setCipher(string c)
 	cipher = c;
 }
 
+void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, text message and a boolean variable for
+{										//encryption/ decryption
+
+	string keyford_e;
+	string messageford_e;
+	bool dec_enc;
+	///PlayfairCipher PFC;
+
+	cout << "Enter keyword to be used:" << endl;
+	cin >> keyford_e;
+	
+	cout << "\nEnter message to be encrypted/ decrypted:" << endl;
+	cin >> messageford_e;
+	
+	cout << "\nEnter '0' for encryption or '1' for decryption:" << endl;
+	cin >> dec_enc;
+
+	setKey(keyford_e);
+	setMessage(messageford_e);
+	setMethod(dec_enc);
+}
+
+void PlayfairCipher::test()
+{
+	cout << "\n" << getKeyWord();
+	cout << "\n" << getMessage();
+	cout << "\n" << getMethod();
+}
+
+
+
+
 void PlayfairCipher::SortKeyword()
 {
 	
@@ -116,27 +148,6 @@ void PlayfairCipher::SortKeyword()
 
 }
 
-void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, text message and a boolean variable for
-{										//encryption/ decryption
-
-	string keyword;
-	string message;
-	bool dec_enc;
-	///PlayfairCipher PFC;
-
-	cout << "Enter keyword to be used:" << endl;
-	cin >> keyword;
-	
-	cout << "\nEnter message to be encrypted/ decrypted:" << endl;
-	cin >> message;
-	
-	cout << "\nEnter '0' for encryption or '1' for decryption:" << endl;
-	cin >> dec_enc;
-
-	setKey(keyword);
-	setMessage(message);
-	setMethod(dec_enc);
-}
 
 void PlayfairCipher::output()
 {

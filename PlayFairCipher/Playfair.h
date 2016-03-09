@@ -18,7 +18,7 @@ private:
 	bool d_e;		//a boolean parameter which indicates whether the passed message is plaintext or ciphertext i.e
 					//whether the message is to be encrypted or decrypted, d_e is short for decryption and encryption
 	char keyword[5][5] = {};
-	string cipher;
+	string cipher;		//variable to hold the final result
 
 public:
 	PlayfairCipher();	//Constructor
@@ -41,7 +41,7 @@ public:
 
 	//Input
 	void inputInfo();		//Method which is used to input the keyword, text message and a boolean variable for
-							//encryption/ decryption
+							//encryption (0)/ decryption(1)
 
 	//Process
 	void SortKeyword(); //This is the keyword manipulation. The keyword is appended to the rest of the letters of the alphabet,
@@ -57,7 +57,7 @@ public:
 
 	//Output
 	void output();
-
+	void test();
 	//Encryption
 //	void createKeyword(string key);
 

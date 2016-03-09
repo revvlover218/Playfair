@@ -16,6 +16,7 @@ int main()
 	string mes;
 	
 	PFC.inputInfo();
+	PFC.test();
 //	PFC.output();	
 //	PFC.SortKeyword();
 //	PFC.prepMessage();
