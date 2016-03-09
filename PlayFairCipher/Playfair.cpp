@@ -30,6 +30,11 @@ bool PlayfairCipher::getMethod()
 	return d_e;
 }
 
+string PlayfairCipher::getCipher()
+{
+	return cipher;
+}
+
 //Mutator functions
 void PlayfairCipher::setKey(string k)
 {
@@ -44,6 +49,11 @@ void PlayfairCipher::setMessage(string m)
 void PlayfairCipher::setMethod(bool de)		//de is short for decryption and encryption
 {
 	d_e = de;
+}
+
+void PlayfairCipher::setCipher(string c)
+{
+	cipher = c;
 }
 
 void PlayfairCipher::SortKeyword()
@@ -162,5 +172,59 @@ void PlayfairCipher::prepMessage()
 		message = mes;
 
 		cout << "\n\n" << message << endl;
+	}
+}
+
+void PlayfairCipher::encry_decry()
+{
+	int row1 = 0, col1 = 0, row2 = 0, col2 = 0;
+	int h = 0;
+
+	while (h < message.length())
+	{
+		getCharPos(message[h], row1, col1);
+		h++;
+		getCharPos(message[h], row2, col2);
+
+		if (row1 == row2)
+		{
+			cipher += getChar(row1, col1 + 1);
+			cipher += getChar(row2, col2 + 1);
+		}
+		if (col1 == col2)
+		{
+			cipher += getChar(row1 + 1, col1);
+			cipher += getChar(row2 + 1, col1);
+		}
+		else
+		{
+			cipher += getChar(row1, col2);
+			cipher += getChar(row2, col1);
+		}
+		h++;
+	}
+
+
+}
+
+char PlayfairCipher::getChar(int row, int column)
+{
+
+	return keyword[(row + 5) % 5][(column + 5) % 5]; //*negatives
+
+}
+
+void PlayfairCipher::getCharPos(char ch, int &row, int &col)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (keyword[i][j] == ch)
+			{
+				row = i;
+				col = j;
+			}
+		}
 	}
 }
