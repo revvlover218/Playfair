@@ -38,10 +38,9 @@ public:
 						//Next a 2D array is created and is populated with the key word.
 	void prepMessage(); //Takes the message from input and separates repeating letters using the filler character "X"
 						//The same filler characgter is used if the pairs are incomplete.
+
 	//Output
 	void output();
-	void testoutput();
-
 
 	//Encryption
 //	void createKeyword(string key);
