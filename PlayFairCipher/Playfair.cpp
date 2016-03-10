@@ -221,6 +221,7 @@ void PlayfairCipher::encry_decry()
 	if (d_e)
 		direction = -1;
 
+	//explained in header file
 	while (h < message.length())
 	{
 
