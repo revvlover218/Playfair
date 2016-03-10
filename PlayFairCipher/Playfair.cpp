@@ -222,7 +222,7 @@ void PlayfairCipher::encry_decry()
 		direction = -1;
 
 	//explained in header file
-	while (h < message.length())
+	while (h < message.length()-1)
 	{
 
 		getCharPos(message[h], row1, col1);
@@ -272,3 +272,4 @@ void PlayfairCipher::output()
 		cout << cipher << endl;
 	}
 }
+
