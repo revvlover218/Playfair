@@ -56,7 +56,13 @@ public:
 							//from the 2D array.
 	void getCharPos(char, int &, int &); //Takes in a character from the message, returns using referencing, the row and column
 										//values for that character.
-	void encry_decry();
+	void encry_decry(); //A check is done on the boolean variable to determine whether encryption or decryption must take place.
+						//If the pair of characters are in the same row, encrypt by taking the letter next to it and decrypt
+						//by taking the letter before it. That is the same as adding 1 in the row position for each character for
+						//encryption and subtracting 1 for each character for decryption. The same applies for characters in the
+						//same column. 
+						//For both encryption and decryption, if pair of characters form a rectangle, replace each character
+						//by the character in the same row at the other vertex of the rectangle.
 
 	//Output
 	void output();	//converts the result to UPPER case for aesthetic purposes and outs the result to the screen.
