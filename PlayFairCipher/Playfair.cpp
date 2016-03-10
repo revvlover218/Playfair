@@ -222,12 +222,10 @@ void PlayfairCipher::encry_decry()
 		direction = -1;
 
 	//explained in header file
-	while (h < message.length()-1)
+	for (h = 0; h < message.length(); h += 2)
 	{
-
 		getCharPos(message[h], row1, col1);
-		h++;
-		getCharPos(message[h], row2, col2);
+		getCharPos(message[h+1], row2, col2);
 
 		if (row1 == row2)
 		{
@@ -236,7 +234,7 @@ void PlayfairCipher::encry_decry()
 			cipher += getChar(row2, col2 + direction);
 		}
 
-		if (col1 == col2)
+		else if (col1 == col2)
 		{
 
 			cipher += getChar(row1 + direction, col1);
@@ -249,11 +247,9 @@ void PlayfairCipher::encry_decry()
 			cipher += getChar(row1, col2);
 			cipher += getChar(row2, col1);
 		}
-
-		h++;
 	}
+	
 }
-
 
 void PlayfairCipher::output()
 {
@@ -273,3 +269,11 @@ void PlayfairCipher::output()
 	}
 }
 
+
+//howquicklydaftjumpingzebrasvex
+//howard college
+//encryption
+//strike is over
+//programming is love
+//computer engineering is for life
+//

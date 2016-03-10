@@ -13,11 +13,12 @@ int main()
 {
 	PlayfairCipher PFC;
 	
-	PFC.inputInfo();
-	PFC.SortKeyword();
-	PFC.prepMessage();
-	PFC.encry_decry();
-	PFC.output();	
+		PFC.inputInfo();
+		PFC.SortKeyword();
+		PFC.prepMessage();
+		PFC.encry_decry();
+		PFC.output();	
+	
 	system("pause");
 	return 0;
 }
