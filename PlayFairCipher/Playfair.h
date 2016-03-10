@@ -61,13 +61,6 @@ public:
 	//Output
 	void output();
 	void test();
-	//Encryption
-//	void createKeyword(string key);
-
-
-
-
-
 
 };
 #endif

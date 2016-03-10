@@ -153,7 +153,7 @@ void PlayfairCipher::prepMessage()
 			testfillq = 1;
 		if (message[i] == 'x')
 			testfillx = 1;
-		 if (message[i] == 'z')
+        if (message[i] == 'z')
 			testfillz = 1;
 	}
 
@@ -164,7 +164,7 @@ void PlayfairCipher::prepMessage()
 	else if (testfillq == 0)
 		filler = 'q';
 
-	/*	for (int i = 0; i < message.length(); i+=2)
+	for (int i = 0; i < message.length(); i+=2)
 		{
 
 			mes += message[i];		//append each character to the string: mes
@@ -172,39 +172,42 @@ void PlayfairCipher::prepMessage()
 			if (i + 1 < message.length()) //if the length of the message has not been reached
 			{
 				if (message[i] == message[i + 1])		//Check if the next character is the same as the current character 
-				{										//if it is insert an "X" between them, since Playfair cipher does not
-					mes += "x";							//allow the character in each pair to be the same.
+				{										//if it is insert a filler character between them, since Playfair cipher 
+					mes += filler;						//does not allow the character in each pair to be the same.
 				}
 				mes += message[i + 1];
 			}
 		}
 
-		if (mes.length() % 2 == 1)		//Since encryption requires the characters of the message to be in pairs, it means that the length 
-			mes.append("x");			//of the string must be even. Therefore, if there is an odd number of characters in the string
-										//insert an 'X' to make the length of the string even.
+		if (mes.length() % 2 == 1)		//Since encryption requires the characters of the message to be in pairs, it means that 
+			mes += filler;			//the length of the string must be even. Therefore, if there is an odd number of 
+										//characters in the string insert an 'X' to make the length of the string even.
 		message = mes;
-
-		cout << "\n\n" << message << endl;*/
 }
 
-void PlayfairCipher::test()
+char PlayfairCipher::getChar(int row, int column)
 {
-	cout << "\n\n" << message << endl;
+	return keyword[(row + 5) % 5][(column + 5) % 5];
 }
 
-
-void PlayfairCipher::output()
+void PlayfairCipher::getCharPos(char ch, int &row, int &col)
 {
 
-//	PlayfairCipher PFC;
+	for (int i = 0; i < 5; i++)
+	{
 
-	cout << "The encrypted message is:" << endl;
-	cout << getKeyWord() << endl;
-	cout << getMessage() << endl;
-	cout << getMethod() << endl;
+		for (int j = 0; j < 5; j++)
+		{
+
+			if (keyword[i][j] == ch)
+			{
+
+				row = i;
+				col = j;
+			}
+		}
+	}
 }
-
-
 
 void PlayfairCipher::encry_decry()
 {
@@ -213,12 +216,13 @@ void PlayfairCipher::encry_decry()
 
 	int direction; //variable to hold value for the direction of encryption i.e. encryption = 1 and decryption = -1
 
-	if (d_e = 0)
+	if (!d_e)
 		direction = 1;
-	if (d_e = 1)
+	if (d_e)
 		direction = -1;
 
-	while (h < message.length())
+	cout << "\n\n" << direction << endl;
+/*	while (h < message.length())
 	{
 		getCharPos(message[h], row1, col1);
 		h++;
@@ -242,27 +246,26 @@ void PlayfairCipher::encry_decry()
 		h++;
 	}
 
-
+	*/
 }
 
-char PlayfairCipher::getChar(int row, int column)
+
+void PlayfairCipher::test()
 {
-
-	return keyword[(row + 5) % 5][(column + 5) % 5]; //*negatives
-
+	cout << "\n\n" << message << endl;
 }
 
-void PlayfairCipher::getCharPos(char ch, int &row, int &col)
+
+
+
+
+void PlayfairCipher::output()
 {
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			if (keyword[i][j] == ch)
-			{
-				row = i;
-				col = j;
-			}
-		}
-	}
+
+//	PlayfairCipher PFC;
+
+	cout << "The encrypted message is:" << endl;
+	cout << getKeyWord() << endl;
+	cout << getMessage() << endl;
+	cout << getMethod() << endl;
 }
