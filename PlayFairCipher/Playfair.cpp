@@ -83,7 +83,6 @@ void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, t
 	setMethod(dec_enc);
 }
 
-
 void PlayfairCipher::SortKeyword()
 {
 	
@@ -130,46 +129,42 @@ void PlayfairCipher::SortKeyword()
 	}
 }
 
-void PlayfairCipher::test()
-{
-	for (int r = 0; r < 5; r++)
-	{
-
-		for (int c = 0; c < 5; c++)
-			cout << keyword[r][c] << "\t";
-
-		cout << endl;
-	}
-
-	cout << "\n\n" << key << endl;
-}
-
-
-
-
-
-
-
-
-void PlayfairCipher::output()
-{
-
-//	PlayfairCipher PFC;
-
-	cout << "The encrypted message is:" << endl;
-	cout << getKeyWord() << endl;
-	cout << getMessage() << endl;
-	cout << getMethod() << endl;
-}
-
 void PlayfairCipher::prepMessage()
 {
-	string mes;
 
-	if (d_e == 0) //Encryption
+	string mes;
+	char filler; //default filler character
+	int testfillq = 0; //test if filler character exists in message, if it does (testfill = 1) use next character (Q, X, Z)
+	int testfillx = 0;
+	int testfillz = 0;
+
+	for (int i = 0; i < message.length(); i++)
 	{
 
-		for (int i = 0; i < message.length(); i+=2)
+		if (message[i] == ' ')		//Remove spaces from the Plain/ Cipher text.
+			message.erase(i, 1);
+	}
+
+	//Find appropriate filler character
+	for (int i = 0; i < message.length(); i++)
+	{
+
+		if (message[i] == 'q')
+			testfillq = 1;
+		if (message[i] == 'x')
+			testfillx = 1;
+		 if (message[i] == 'z')
+			testfillz = 1;
+	}
+
+	if (testfillx == 0)
+		filler = 'x';
+	else if (testfillz == 0)
+		filler = 'z';
+	else if (testfillq == 0)
+		filler = 'q';
+
+	/*	for (int i = 0; i < message.length(); i+=2)
 		{
 
 			mes += message[i];		//append each character to the string: mes
@@ -189,9 +184,27 @@ void PlayfairCipher::prepMessage()
 										//insert an 'X' to make the length of the string even.
 		message = mes;
 
-		cout << "\n\n" << message << endl;
-	}
+		cout << "\n\n" << message << endl;*/
 }
+
+void PlayfairCipher::test()
+{
+	cout << "\n\n" << message << endl;
+}
+
+
+void PlayfairCipher::output()
+{
+
+//	PlayfairCipher PFC;
+
+	cout << "The encrypted message is:" << endl;
+	cout << getKeyWord() << endl;
+	cout << getMessage() << endl;
+	cout << getMethod() << endl;
+}
+
+
 
 void PlayfairCipher::encry_decry()
 {

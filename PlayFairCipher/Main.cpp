@@ -17,10 +17,10 @@ int main()
 	
 	PFC.inputInfo();
 	PFC.SortKeyword();
-	PFC.test();
+	PFC.prepMessage();
+//	PFC.test();
 //	PFC.output();	
-//	PFC.SortKeyword();
-//	PFC.prepMessage();
+	
 	
 	
 
