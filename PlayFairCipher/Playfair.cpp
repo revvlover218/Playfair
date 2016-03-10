@@ -258,9 +258,6 @@ void PlayfairCipher::encry_decry()
 void PlayfairCipher::output()
 {
 
-	for (int i = 0; i < cipher.length(); i++)
-		toupper(cipher[i]);		//Convert to upper case
-
 	if (!d_e)
 	{
 
