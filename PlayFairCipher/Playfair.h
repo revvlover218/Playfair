@@ -65,7 +65,7 @@ public:
 						//by the character in the same row at the other vertex of the rectangle.
 
 	//Output
-	void output();	//Outputs the result to the screen.
+	void output();	//Outputs the result to the screen. Converts ciphertext to upper case.
 
 };
 #endif

@@ -6,6 +6,7 @@
 #include "Playfair.h"
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -257,8 +258,15 @@ void PlayfairCipher::output()
 	if (!d_e)
 	{
 
+		for (int i = 0; i < cipher.length(); i += 3)
+			cipher.insert(i, " ");						//insert spaces after every two characters
+		
 		cout << "\nThe encrypted Ciphertext is" << endl;
-		cout << cipher << endl;
+		
+		for (int i = 0; i < cipher.length(); i++)
+			cout <<  static_cast<char>(toupper(cipher[i]));	//Converts each character to upper case
+		
+		cout << endl;
 	}
 
 	if (d_e)
@@ -269,11 +277,20 @@ void PlayfairCipher::output()
 	}
 }
 
+/*Test cases to be used in the program: (copy and paste into program)
+Encryption:
+1. K = encryption
+   P = strike is over
+   Result C = LA CO UP AM TX NY
+2. K = how quickly daft jumping zebras vex
+   P = howard college
+   Result C = OW OF BA AC YV YZ ZP
 
-//howquicklydaftjumpingzebrasvex
-//howard college
-//encryption
-//strike is over
-//programming is love
-//computer engineering is for life
-//
+Decryption
+1. K = playfair
+   C = ldentityvgprpm
+   Result P = friends for life
+2. K = programming is love
+   C = bgvmzfhibirsibhinsrslmmhbw 
+   Result P = ???
+*/
