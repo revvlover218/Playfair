@@ -221,51 +221,56 @@ void PlayfairCipher::encry_decry()
 	if (d_e)
 		direction = -1;
 
-	cout << "\n\n" << direction << endl;
-/*	while (h < message.length())
+	while (h < message.length())
 	{
+
 		getCharPos(message[h], row1, col1);
 		h++;
 		getCharPos(message[h], row2, col2);
 
 		if (row1 == row2)
 		{
-			cipher += getChar(row1, col1 + 1);
-			cipher += getChar(row2, col2 + 1);
+
+			cipher += getChar(row1, col1 + direction);
+			cipher += getChar(row2, col2 + direction);
 		}
+
 		if (col1 == col2)
 		{
-			cipher += getChar(row1 + 1, col1);
-			cipher += getChar(row2 + 1, col1);
+
+			cipher += getChar(row1 + direction, col1);
+			cipher += getChar(row2 + direction, col1);
 		}
+
 		else
 		{
+
 			cipher += getChar(row1, col2);
 			cipher += getChar(row2, col1);
 		}
+
 		h++;
 	}
-
-	*/
 }
-
-
-void PlayfairCipher::test()
-{
-	cout << "\n\n" << message << endl;
-}
-
-
-
 
 
 void PlayfairCipher::output()
 {
 
-//	PlayfairCipher PFC;
+	for (int i = 0; i < cipher.length(); i++)
+		toupper(cipher[i]);		//Convert to upper case
 
-	cout << "The encrypted message is:" << endl;
-	cout << getKeyWord() << endl;
-	cout << getMessage() << endl;
-	cout << getMethod() << endl;
+	if (!d_e)
+	{
+
+		cout << "\nThe encrypted Ciphertext is" << endl;
+		cout << cipher << endl;
+	}
+
+	if (d_e)
+	{
+
+		cout << "\nThe decrypted plaintext is" << endl;
+		cout << cipher << endl;
+	}
 }

@@ -59,8 +59,7 @@ public:
 	void encry_decry();
 
 	//Output
-	void output();
-	void test();
+	void output();	//converts the result to UPPER case for aesthetic purposes and outs the result to the screen.
 
 };
 #endif

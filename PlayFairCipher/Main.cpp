@@ -17,9 +17,7 @@ int main()
 	PFC.SortKeyword();
 	PFC.prepMessage();
 	PFC.encry_decry();
-	
-	//PFC.test();
-//	PFC.output();	
+	PFC.output();	
 	system("pause");
 	return 0;
 }
