@@ -70,10 +70,10 @@ void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, t
 	///PlayfairCipher PFC;
 
 	cout << "Enter keyword to be used:" << endl;
-	cin >> keyford_e;
+	getline(cin, keyford_e);
 	
 	cout << "\nEnter message to be encrypted/ decrypted:" << endl;
-	cin >> messageford_e;
+	getline(cin, messageford_e);
 	
 	cout << "\nEnter '0' for encryption or '1' for decryption:" << endl;
 	cin >> dec_enc;
@@ -83,70 +83,72 @@ void PlayfairCipher::inputInfo()		//Method which is used to input the keyword, t
 	setMethod(dec_enc);
 }
 
-void PlayfairCipher::test()
-{
-	cout << "\n" << getKeyWord();
-	cout << "\n" << getMessage();
-	cout << "\n" << getMethod();
-}
-
-
-
 
 void PlayfairCipher::SortKeyword()
 {
 	
 	string alpha = "abcdefghijklmnopqrstuvwxyz";
-	char keyword[5][5];
+	int i = 0;
 
-	key.append(alpha);	//the alphabets are appended to the keyword
+	for (int i = 0; i < key.length(); i++)
+	{
+		if (key[i] == ' ')
+			key.erase(i, 1);
+	}
+
+
+	key.append(alpha);	//Appended alphabets to the keyword
 	
 	for (int i = 0; i < key.length(); i++)
 	{
 
 		for (int j = i + 1; j < key.length(); j++)
 		{
+	
 			if (key[i] == key[j])
-				key.erase(j, 1); //Remove duplicate characters
+				key.erase(j, 1); //Remove duplicate characters. This function also ammends the length of the array when needed.
 		}
 
 	}
 
 	for (int i = 0; i < key.length(); i++)
 	{
+
 		if (key[i] == 'j')		//Remove 'j' from keyword
 			key.erase(i, 1);
 	}
 
-	cout << "\n\n" << "After removing duplicates:" << endl;
-	cout << "\n\n" << key << endl;
-	
-	int i = 0;
-
 	for (int r = 0; r < 5; r++)
 	{
 	
 		for (int c = 0; c < 5; c++)
 		{
 
-			keyword[r][c] = key[i];
+			keyword[r][c] = key[i];	//Stores each character of the key into the 2D array.
 			i++;
 		}
 	}
+}
 
+void PlayfairCipher::test()
+{
 	for (int r = 0; r < 5; r++)
 	{
 
 		for (int c = 0; c < 5; c++)
-		{
-
 			cout << keyword[r][c] << "\t";
-		}
+
 		cout << endl;
 	}
 
-
+	cout << "\n\n" << key << endl;
 }
+
+
+
+
+
+
 
 
 void PlayfairCipher::output()
